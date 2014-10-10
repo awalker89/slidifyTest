@@ -1,0 +1,53 @@
+---
+title       : rCharts Integration
+subtitle: Adapted from OpenCPU MarkdownApp
+author: Alex Walker
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+ext_widgets : {rCharts: libraries/nvd3}
+
+---
+
+## NVD3 Plot Inline
+
+```{r nvd3plot, results = 'asis', comment = NA, message = F, echo = F}
+require("knitr")
+require("rCharts")
+
+n1 <- nPlot(mpg ~ wt, data = mtcars, type = 'scatterChart')
+n1$show('inline')
+```
+
+---
+
+## NVD3 Plot Iframe
+
+```{r nvd3plot2, results = 'asis', comment = NA, message = F, echo = F} 
+require("knitr")
+require("rCharts")
+
+# n1 <- nPlot(mpg ~ wt, data = mtcars, type = 'scatterChart')
+# n1
+
+
+map1 = Leaflet$new()
+map1$setView(c(45.5236, -122.675), 13)
+# map1$tileLayer("http://a.tiles.mapbox.com/v3/mapbox.control-room/{z}/{x}/{y}.png", zoom = 8)
+map1
+
+
+```
+
+---
+
+
+
+
+
+
+
+
+
+
